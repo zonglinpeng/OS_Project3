@@ -1,3 +1,6 @@
+/**
+*Author: Zonglin Peng
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
