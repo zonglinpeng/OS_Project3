@@ -1,0 +1,45 @@
+-----------README for V2--------------
+
+Author: Zonglin Peng, Rui Huang
+
+Instructions:
+Use Makefile to compile and clean the program. According
+to the prompt input valid commands.
+
+Test Case:
+	Test cases are designed in file.txt, where it test all the given options in the shell. Each background process
+are ran along with other foreground and background 
+processes, and each time a process list is printed to 
+varify that each child is created and terminated properly.
+From running the test cases (32 in total), tester can 
+observe that background outputs may intermingle with the
+prompt or the foreground outputs, under all circumstances
+that the shell promotes a prompt and wait for user input.
+All the background are return in their finished order, yet
+if the shell is hung by an user input and by the end a 
+number of backgrounds are finished, the output will be
+printed in random order. Upone exit, the shell will check
+if all backgrounds are done; if not it will refuse to 
+finish, prints the process list, and promotes another 
+prompt.
+	The first part of the test file creates all the
+necessary foreground and background command. The second 
+part run the command with fore to fore, back to back, back
+to fore, and fore to back. The third part test the exit
+when background is not done. At last, the EOF will exit
+the shell successfully.
+
+
+Assumptions & Results:
+1. when user try to input nothing and hits enter key,
+	the shell will assume user is done and will exit
+	the shell in the normal way.
+2. the user is only allow to input exactly one charactor 
+	as a command; otherwise will be treated as invalid.
+3. the max input is set as 7 for options, whereas for
+	special arguements such as path allow to input
+	up to 128 chars.
+4. the given ID of each background process is an interger
+	from 0, and each time a new background is created
+	the ID will be increamented by 1, and decreamented
+	by 1 when a background is terminated.
